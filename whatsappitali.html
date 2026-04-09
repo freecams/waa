@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--
+========================================
+ Template Author : DEN ABI
+ Ownership      : Hak cipta dilindungi
+ Notice         : DILARANG memperjualbelikan
+                  template ini tanpa izin
+                  tertulis dari author.
+========================================
+-->
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>WhatsApp</title>
+
+<style>
+:root{
+  --wa:#25D366;
+  --dark:#111B21;
+  --text:#111;
+}
+*{box-sizing:border-box}
+html,body{
+  margin:0; padding:0; background:#fff; color:var(--text);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
+}
+.mobile{
+  max-width:430px; margin:0 auto; min-height:100vh; background:#fff;
+}
+.header{
+  padding:14px 16px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.header .icon{font-size:22px}
+.header img{height:26px}
+.profile{
+  padding:44px 16px 0; text-align:center;
+}
+.avatar{
+  width:120px; height:120px; border-radius:50%; object-fit:cover;
+}
+.name{
+  margin:16px 0 26px; font-size:24px; font-weight:400;
+}
+.btn-open{
+  display:block;
+  width:80%;        
+  max-width:280px;    
+  margin:0 auto;
+  background:#25D366;
+  color:#000;
+  padding:16px 0;
+  border-radius:36px;
+  font-size:18px;
+  font-weight:600;
+  text-decoration:none;
+  border:1.5px solid #000;
+}
+.btn-open:active{transform:scale(.985);}
+.helper{
+  margin-top:18px;
+  display:flex; justify-content:center; gap:8px;
+  font-size:15px;
+}
+.helper img{width:18px; height:18px; margin-top:2px}
+.helper a{
+  color:#000; text-decoration:none;
+  border-bottom:3px solid var(--wa);
+  padding-bottom:2px;
+  font-weight:700;
+}
+.bottom{
+  margin-top:48px; background:var(--dark);
+  padding:40px 16px 50px; text-align:center;
+}
+.btn-download{
+  width:80%;
+  max-width:280px;      
+  margin:0 auto;
+  background:#25D366;
+  color:#000;
+  padding:18px 0;
+  border-radius:40px;
+  font-size:20px;
+  font-weight:600;
+  border:0;
+  border:1.5px solid #000;
+}
+.btn-download:active{transform:scale(.985);}
+.social{
+  margin-top:34px; display:flex; justify-content:center; gap:20px;
+}
+.social a{
+  width:54px; height:54px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.35);
+  display:flex; align-items:center; justify-content:center;
+  color:#fff; text-decoration:none; font-size:20px;
+}
+
+/* safe area */
+.pad-bottom{height:env(safe-area-inset-bottom)}
+@media (max-width: 360px){
+  .btn-open,
+  .btn-download{
+    width:78%;
+    max-width:250px;
+    font-size:16px;
+  }
+  .btn-download{
+    font-size:18px;
+  }
+  .name{
+    font-size:22px;
+  }
+}
+@media (max-width: 320px){
+  .btn-open,
+  .btn-download{
+    width:75%;
+    max-width:230px;
+    padding:14px 0;
+    font-size:15px;
+  }
+  .btn-download{
+    font-size:17px;
+  }
+}
+.social a img{
+  width:22px;
+  height:22px;
+  filter: invert(1);
+}
+.social{
+  margin-top:32px;
+  display:flex;
+  justify-content:center;
+  gap:18px;
+}
+
+.social a{
+  width:52px;
+  height:52px;
+  border-radius:50%;
+  border:1.5px solid rgba(255,255,255,.45);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:transform .08s ease, background .08s ease;
+}
+
+.social a:active{
+  transform:scale(.92);
+  background:rgba(255,255,255,.12);
+}
+.social img{
+  width:22px;
+  height:22px;
+  filter:invert(1);
+  pointer-events:none;
+}
+@media (max-width:360px){
+  .social a{
+    width:48px;
+    height:48px;
+  }
+  .social img{
+    width:20px;
+    height:20px;
+  }
+}
+.wa-logo{
+  display:flex;
+  align-items:center;
+  gap:6px;
+}
+.wa-logo img{
+  width:26px;
+  height:26px;
+  filter: invert(41%) sepia(83%) saturate(425%) hue-rotate(92deg) brightness(95%) contrast(92%);
+}
+.wa-logo span{
+  font-size:20px;
+  font-weight:600;
+  color:#25D366;
+}
+.download-icon{
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:1.5px solid #000;
+}
+.download-icon img{
+  width:18px;
+  height:18px;
+}
+.btn-download{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  width:80%;
+  max-width:280px;
+  margin:0 auto;
+  background:#25D366;
+  color:#000;
+  padding:18px 0;
+  border-radius:40px;
+  font-size:20px;
+  font-weight:600;
+  text-decoration:none;
+}
+.btn-download img{
+  width:20px;
+  height:20px;
+}
+.menu-link{
+  text-decoration:none;
+  color:#000;             
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+}
+.menu-link:active{
+  background:rgba(0,0,0,.08); /* efek tekan halus */
+}
+.menu-link .icon{
+  font-size:22px;
+  line-height:1;
+}
+</style>
+</head>
+<body>
+    <script>
+(function(){
+
+function kill(){
+  document.documentElement.innerHTML = "";
+  document.open();document.write("");document.close();
+}
+const SIGNATURE = `
+========================================
+ Template Author : DEN ABI
+ Ownership      : Hak cipta dilindungi
+ Notice         : DILARANG memperjualbelikan
+                  template ini tanpa izin
+                  tertulis dari author.
+========================================
+`.trim();
+const walker = document.createTreeWalker(
+  document,
+  NodeFilter.SHOW_COMMENT,
+  null,
+  false
+);
+
+let found = false;
+while(walker.nextNode()){
+  const c = walker.currentNode.nodeValue.trim();
+  if(c === SIGNATURE){
+    found = true;
+    break;
+  }
+}
+
+if(!found){
+  kill();
+}
+
+})();
+</script>
+<div class="mobile">
+
+  <!-- HEADER -->
+ <div class="header">
+ <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH" target="_blank" class="menu-link" aria-label="Menu">
+  <span class="icon">☰</span>
+</a>
+
+  <div class="wa-logo">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/whatsapp.svg" alt="WhatsApp">
+    <span>WhatsApp</span>
+  </div>
+
+ <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH" target="_blank" class="download-icon">
+  <img src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/svg/download-outline.svg" alt="Unduh">
+</a>
+</div>
+
+  <div class="profile">
+    <img class="avatar"
+ src="https://i.ibb.co.com/ybXtfY9/IMG-20260408-WA0011.jpg" alt="Avatar">
+    <div class="name">Chiara Valentina</div>
+
+    <a class="btn-open"
+       href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH">
+      Messaggio WhatsApp
+    </a>
+
+    <div class="helper">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="">
+      <div>
+        Non hai questa applicazione?<br>
+        <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH">Scarica ora</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom">
+   <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH" target="_blank" class="btn-download">
+  Scarica 
+  <img src="https://cdn.jsdelivr.net/npm/ionicons@7.1.0/dist/svg/download-outline.svg" alt="">
+</a>
+
+  <div class="social">
+  <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH" target="_blank" aria-label="X">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg">
+  </a>
+  <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH" target="_blank" aria-label="YouTube">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg">
+  </a>
+  <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH" target="_blank" aria-label="Instagram">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg">
+  </a>
+  <a href="https://www.liveroomcam.com/?utm_source=da57dc555e50572d&ban=fb&j1=1&j5=1&j6=1&s1=232783&s2=2110304&click_id=ALHAMDULILLAH" target="_blank" aria-label="Facebook">
+    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg">
+  </a>
+</div>
+</div>
+</div>
+</body>
+</html>
